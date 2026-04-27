@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kedar — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-ring"></div>
+  <div class="loader-text">Loading<span>...</span></div>
+</div>
+
+<!-- App -->
+<div id="app">
+
+  <!-- Background blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <!-- Main content -->
+  <main id="main">
+    <section id="home">
+      <div class="hero-content">
+        <p class="hero-eyebrow">welcome to About me</p>
+        <h1 class="hero-title">
+          Work in<br/>
+          <span class="name">Progress</span>
+        </h1>
+        <p class="hero-bio">
+          Kindly Wait for a while, I'm currently working on my portfolio and it will be live soon.
+        </p>
+        <div class="hero-cta">
+          <a class="btn-primary" href="/index.html">
+            <span>Go Home</span>
+            <span>→</span>
+          </a>
+          <a class="btn-outline" href="/contact.html">Get in touch</a>
+        </div>
+      </div>
+            <div class="hero-sketch">
+        <img src="workInProgress.png" alt="Kedar Bird Sketch"/>
+      </div>
+    </section>
+  </main>
+
+</div>
+
+<script>
+  // Loader: hide after 1.5s
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      document.getElementById('loader').classList.add('hide');
+      setTimeout(() => {
+        document.getElementById('app').classList.add('visible');
+        document.getElementById('loader').style.display = 'none';
+      }, 650);
+    }, 1200);
+  });
+
+  // Active nav highlight on click
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+    });
+  });
+  if (window.location.pathname.endsWith('portfolio.html')) {
+    document.querySelector('.nav-item[href="/portfolio.html"]').classList.add('active');
+  }
+</script>
+</body>
+</html>
